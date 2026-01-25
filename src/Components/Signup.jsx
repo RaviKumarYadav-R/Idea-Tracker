@@ -28,10 +28,11 @@ function Signup() {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-slate-900 text-white p-6 mt-10 rounded-lg border border-slate-700 shadow">
-      <h2 className="text-center font-semibold text-3xl mb-4 pb-4 border-b border-slate-700">
+    <div className="max-w-md mx-auto bg-slate-900 text-white p-6 mt-5 rounded-lg border border-slate-700 shadow">
+      <h2 className="text-center font-semibold text-3xl mb-2 ">
         Signup
       </h2>
+      <p className="text-gray-400 pb-4 border-b border-slate-700 text-center mb-4">Signup to continue</p>
       <div className="border-b border-slate-700 pb-4 mb-4">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <Input
