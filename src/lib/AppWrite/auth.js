@@ -53,6 +53,19 @@ class AppWriteAuth {
       console.log("Error in logout User", error);
     }
   }
+
+  // 0Auth with github
+  async github0Auth() {
+    try {
+    return await this.account.createOAuth2Session(
+        "github",
+        "http://localhost:5173/",
+        "http://localhost:5173/account/login",
+      );
+    } catch (error) {
+      console.log("Error in github 0Auth", error);
+    }
+  }
 }
 
 const appWriteAuth = new AppWriteAuth();

@@ -17,10 +17,23 @@ function MyIdeas() {
   }, [userDetails, navigate]);
 
   return (
-    <div>
+    <div className="pt-12">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold">Hello {userDetails?.name}</h2>
-        <Button onClick={() => navigate("createidea")}>Add Idea</Button>
+        <Button
+          onClick={() => navigate("createidea")}
+          className="flex items-center gap-1 bg-[#634bff] cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            className="size-4"
+            fill="currentColor"
+          >
+            <path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z" />
+          </svg>{" "}
+          <span>Create Idea</span>
+        </Button>
       </div>
 
       <div className="mt-6 space-y-4">
@@ -29,16 +42,17 @@ function MyIdeas() {
             <Link
               to={`idea/${idea.$id}`}
               key={idea.$id}
-              className="bg-slate-300 p-4 rounded-lg text-black shadow   block hover:bg-slate-400 transition-colors "
+              className="bg-slate-300 p-4 rounded-lg text-black shadow block hover:bg-slate-400 transition-colors "
             >
-              <div className="flex justify-between items-center gap-4 mb-4">
-                <h3 className="text-xl font-semibold">{idea.title}</h3>
-              </div>
-              <p className="text-gray-600">{idea.description}</p>
+              <h3 className="text-base font-semibold mb-1">{idea.title}</h3>
+              <p className="text-gray-700 text-base">
+                {idea.description.split(" ").slice(0, 30).join(" ")}
+                {idea.description.split(" ").length > 30 && "..."}
+              </p>
             </Link>
           ))
         ) : (
-          <p>Add your first idea.</p>
+          <p className="text-center">Add your first idea.</p>
         )}
       </div>
     </div>
