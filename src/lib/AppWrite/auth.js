@@ -57,10 +57,10 @@ class AppWriteAuth {
   // 0Auth with github
   async github0Auth() {
     try {
-    return await this.account.createOAuth2Session(
+      return await this.account.createOAuth2Session(
         "github",
-        "http://localhost:5173/",
-        "http://localhost:5173/account/login",
+        "https://idea-tracker-silk.vercel.app/",
+        "https://idea-tracker-silk.vercel.app/account/login",
       );
     } catch (error) {
       console.log("Error in github 0Auth", error);
